@@ -7,8 +7,7 @@ public class BallShooter : MonoBehaviour
 
     public GameObject spherePrefab;
     public float shpereForce;
-    public float shpereRad;
-    public float maxDistance = 100f;      
+    public float shpereRad;     
     public LayerMask allLayer;
     public LayerMask obstacolLayer;
 
@@ -30,7 +29,7 @@ public class BallShooter : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.SphereCast(ray, 0.5f, out RaycastHit hitInfo, maxDistance, allLayer))
+            if (Physics.SphereCast(ray, 0.5f, out RaycastHit hitInfo, Mathf.Infinity, allLayer))
             {
                 if (hitInfo.collider.gameObject.layer == 3)
                 {

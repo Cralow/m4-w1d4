@@ -29,7 +29,7 @@ public class BallShooter : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.SphereCast(ray, 0.5f, out RaycastHit hitInfo, Mathf.Infinity, allLayer))
+            if (Physics.SphereCast(ray, 0.01f, out RaycastHit hitInfo, Mathf.Infinity, allLayer))
             {
                 if (hitInfo.collider.gameObject.layer == 3)
                 {

@@ -23,9 +23,10 @@ public class CubeShooter : MonoBehaviour
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, cubeLayerMask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, cubeLayerMask))
             {            
-                Vector3 spawnPos = hit.point + hit.normal * 0.001f;          
+                Vector3 spawnPos = hit.point + hit.normal * 0.001f;
+
                 Quaternion spawnRot = Quaternion.LookRotation(-hit.normal);    
                 Instantiate(bulletHole, spawnPos, spawnRot, hit.transform);
 
